@@ -1,7 +1,7 @@
-# VizCube Dataset
+# VisCube Dataset
 
 ## Overview
-The VizCube Dataset merges detailed user profiles with various data visualization types and corresponding visual analysis tasks to foster the development of intelligent, user-adaptive visualization systems. By documenting the interaction between user characteristics and visualization task performance, this dataset is uniquely positioned to drive advancements in personalized visualization tools. It is open-source and aims to support research and development in the field.
+The VisCube Dataset merges detailed user profiles with various data visualization types and corresponding visual analysis tasks to foster the development of intelligent, user-adaptive visualization systems. By documenting the interaction between user characteristics and visualization task performance, this dataset is uniquely positioned to drive advancements in personalized visualization tools. It is open-source and aims to support research and development in the field.
 
 ## Dataset Description
 The dataset is divided into two primary components:

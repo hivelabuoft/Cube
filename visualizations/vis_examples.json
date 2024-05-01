@@ -1,0 +1,2269 @@
+{
+	"Simple Bar Chart": {
+		"url": "/vega-lite/examples/bar.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"description": "A simple bar chart with embedded data.",
+			"title": {
+				"text": "Number of items sold monthly in 2024",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 500,
+			"data": {
+				"values": [{
+					"Month": "1",
+					"Items Sold": 28
+				}, {
+					"Month": "2",
+					"Items Sold": 55
+				}, {
+					"Month": "3",
+					"Items Sold": 43
+				}, {
+					"Month": "4",
+					"Items Sold": 91
+				}, {
+					"Month": "5",
+					"Items Sold": 81
+				}, {
+					"Month": "6",
+					"Items Sold": 53
+				}, {
+					"Month": "7",
+					"Items Sold": 19
+				}, {
+					"Month": "8",
+					"Items Sold": 87
+				}, {
+					"Month": "9",
+					"Items Sold": 52
+				}]
+			},
+			"mark": "bar",
+			"encoding": {
+				"x": {
+					"field": "Month",
+					"type": "nominal",
+					"axis": {
+						"labelAngle": 0,
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"field": "Items Sold",
+					"type": "quantitative",
+					"axis": {
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				}
+			}
+		}
+	},
+	"Stacked Bar Chart": {
+		"url": "/vega-lite/examples/stacked_bar_weather.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "Number of Days per Weather Type from 2020 to 2023",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 500,
+			"data": {
+				"url": "data/seattle-weather.csv"
+			},
+			"mark": "bar",
+			"encoding": {
+				"x": {
+					"timeUnit": "month",
+					"field": "date",
+					"type": "ordinal",
+					"title": "Month",
+					"axis": {
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"aggregate": "count",
+					"type": "quantitative",
+					"axis": {
+						"title": "Count",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"color": {
+					"field": "weather",
+					"type": "nominal",
+					"scale": {
+						"domain": ["sun", "fog", "drizzle", "rain", "snow"],
+						"range": ["#e7ba52", "#c7c7c7", "#aec7e8", "#1f77b4", "#9467bd"]
+					},
+					"title": "Weather type",
+					"legend": {
+						"titleFontSize": 18,
+						"labelFontSize": 16
+					}
+				}
+			}
+		}
+	},
+	"Diverging Stacked Bar Chart (with Neutral Parts)": {
+		"url": "/vega-lite/examples/bar_diverging_stack_transform.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "Comparative Sentiment Analysis Across Key Questions",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 500,
+			"description": "A diverging stacked bar chart for sentiments towards a set of eight questions, displayed as percentages with neutral responses straddling the 0% mark",
+			"data": {
+				"values": [{
+					"question": "Question 1",
+					"type": "Strongly disagree",
+					"value": 24,
+					"percentage": 0.7
+				}, {
+					"question": "Question 1",
+					"type": "Disagree",
+					"value": 294,
+					"percentage": 9.1
+				}, {
+					"question": "Question 1",
+					"type": "Neither agree nor disagree",
+					"value": 594,
+					"percentage": 18.5
+				}, {
+					"question": "Question 1",
+					"type": "Agree",
+					"value": 1927,
+					"percentage": 59.9
+				}, {
+					"question": "Question 1",
+					"type": "Strongly agree",
+					"value": 376,
+					"percentage": 11.7
+				}, {
+					"question": "Question 2",
+					"type": "Strongly disagree",
+					"value": 2,
+					"percentage": 18.2
+				}, {
+					"question": "Question 2",
+					"type": "Disagree",
+					"value": 2,
+					"percentage": 18.2
+				}, {
+					"question": "Question 2",
+					"type": "Neither agree nor disagree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 2",
+					"type": "Agree",
+					"value": 7,
+					"percentage": 63.6
+				}, {
+					"question": "Question 2",
+					"type": "Strongly agree",
+					"value": 11,
+					"percentage": 0
+				}, {
+					"question": "Question 3",
+					"type": "Strongly disagree",
+					"value": 2,
+					"percentage": 20
+				}, {
+					"question": "Question 3",
+					"type": "Disagree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 3",
+					"type": "Neither agree nor disagree",
+					"value": 2,
+					"percentage": 20
+				}, {
+					"question": "Question 3",
+					"type": "Agree",
+					"value": 4,
+					"percentage": 40
+				}, {
+					"question": "Question 3",
+					"type": "Strongly agree",
+					"value": 2,
+					"percentage": 20
+				}, {
+					"question": "Question 4",
+					"type": "Strongly disagree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 4",
+					"type": "Disagree",
+					"value": 2,
+					"percentage": 12.5
+				}, {
+					"question": "Question 4",
+					"type": "Neither agree nor disagree",
+					"value": 1,
+					"percentage": 6.3
+				}, {
+					"question": "Question 4",
+					"type": "Agree",
+					"value": 7,
+					"percentage": 43.8
+				}, {
+					"question": "Question 4",
+					"type": "Strongly agree",
+					"value": 6,
+					"percentage": 37.5
+				}, {
+					"question": "Question 5",
+					"type": "Strongly disagree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 5",
+					"type": "Disagree",
+					"value": 1,
+					"percentage": 4.2
+				}, {
+					"question": "Question 5",
+					"type": "Neither agree nor disagree",
+					"value": 3,
+					"percentage": 12.5
+				}, {
+					"question": "Question 5",
+					"type": "Agree",
+					"value": 16,
+					"percentage": 66.7
+				}, {
+					"question": "Question 5",
+					"type": "Strongly agree",
+					"value": 4,
+					"percentage": 16.7
+				}, {
+					"question": "Question 6",
+					"type": "Strongly disagree",
+					"value": 1,
+					"percentage": 6.3
+				}, {
+					"question": "Question 6",
+					"type": "Disagree",
+					"value": 1,
+					"percentage": 6.3
+				}, {
+					"question": "Question 6",
+					"type": "Neither agree nor disagree",
+					"value": 2,
+					"percentage": 12.5
+				}, {
+					"question": "Question 6",
+					"type": "Agree",
+					"value": 9,
+					"percentage": 56.3
+				}, {
+					"question": "Question 6",
+					"type": "Strongly agree",
+					"value": 3,
+					"percentage": 18.8
+				}, {
+					"question": "Question 7",
+					"type": "Strongly disagree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 7",
+					"type": "Disagree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 7",
+					"type": "Neither agree nor disagree",
+					"value": 1,
+					"percentage": 20
+				}, {
+					"question": "Question 7",
+					"type": "Agree",
+					"value": 4,
+					"percentage": 80
+				}, {
+					"question": "Question 7",
+					"type": "Strongly agree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 8",
+					"type": "Strongly disagree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 8",
+					"type": "Disagree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 8",
+					"type": "Neither agree nor disagree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 8",
+					"type": "Agree",
+					"value": 0,
+					"percentage": 0
+				}, {
+					"question": "Question 8",
+					"type": "Strongly agree",
+					"value": 2,
+					"percentage": 100
+				}]
+			},
+			"transform": [{
+				"calculate": "if(datum.type === 'Strongly disagree',-2,0) + if(datum.type==='Disagree',-1,0) + if(datum.type =='Neither agree nor disagree',0,0) + if(datum.type ==='Agree',1,0) + if(datum.type ==='Strongly agree',2,0)",
+				"as": "q_order"
+			}, {
+				"calculate": "if(datum.type === 'Disagree' || datum.type === 'Strongly disagree', datum.percentage,0) + if(datum.type === 'Neither agree nor disagree', datum.percentage / 2,0)",
+				"as": "signed_percentage"
+			}, {
+				"stack": "percentage",
+				"as": ["v1", "v2"],
+				"groupby": ["question"]
+			}, {
+				"joinaggregate": [{
+					"field": "signed_percentage",
+					"op": "sum",
+					"as": "offset"
+				}],
+				"groupby": ["question"]
+			}, {
+				"calculate": "datum.v1 - datum.offset",
+				"as": "nx"
+			}, {
+				"calculate": "datum.v2 - datum.offset",
+				"as": "nx2"
+			}],
+			"mark": "bar",
+			"encoding": {
+				"x": {
+					"field": "nx",
+					"type": "quantitative",
+					"axis": {
+						"title": "Percentage",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"x2": {
+					"field": "nx2"
+				},
+				"y": {
+					"field": "question",
+					"type": "nominal",
+					"axis": {
+						"offset": 5,
+						"ticks": false,
+						"minExtent": 60,
+						"domain": false,
+						"title": "Question",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"color": {
+					"field": "type",
+					"type": "nominal",
+					"title": "Response",
+					"scale": {
+						"domain": ["Strongly disagree", "Disagree", "Neither agree nor disagree", "Agree", "Strongly agree"],
+						"range": ["#c30d24", "#f3a583", "#cccccc", "#94c6da", "#1770ab"],
+						"type": "ordinal"
+					},
+					"legend": {
+						"titleFontSize": 18,
+						"labelFontSize": 14
+					}
+				}
+			}
+		}
+	},
+	"Histogram (from Binned Data)": {
+		"url": "/vega-lite/examples/bar_binned_data.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "Distribution of Grades",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 500,
+			"data": {
+				"values": [{
+					"Grades": 0,
+					"bin_end": 10,
+					"Frequency": 7
+				}, {
+					"Grades": 10,
+					"bin_end": 20,
+					"Frequency": 15
+				}, {
+					"Grades": 20,
+					"bin_end": 30,
+					"Frequency": 22
+				}, {
+					"Grades": 30,
+					"bin_end": 40,
+					"Frequency": 25
+				}, {
+					"Grades": 40,
+					"bin_end": 50,
+					"Frequency": 43
+				}, {
+					"Grades": 50,
+					"bin_end": 60,
+					"Frequency": 42
+				}, {
+					"Grades": 60,
+					"bin_end": 70,
+					"Frequency": 40
+				}, {
+					"Grades": 70,
+					"bin_end": 80,
+					"Frequency": 45
+				}, {
+					"Grades": 80,
+					"bin_end": 90,
+					"Frequency": 27
+				}, {
+					"Grades": 90,
+					"bin_end": 100,
+					"Frequency": 5
+				}]
+			},
+			"mark": "bar",
+			"encoding": {
+				"x": {
+					"field": "Grades",
+					"bin": {
+						"binned": true,
+						"step": 10
+					},
+					"axis": {
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"field": "Frequency",
+					"type": "quantitative",
+					"axis": {
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				}
+			}
+		}
+	},
+	"2D Histogram Heatmap": {
+		"url": "/vega-lite/examples/rect_binned_heatmap.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "A Heatmap of Movie Ratings",
+				"fontSize": 22
+			},
+			"data": {
+				"url": "data/movies.json"
+			},
+			"transform": [{
+				"filter": {
+					"and": [{
+						"field": "IMDB Rating",
+						"valid": true
+					}, {
+						"field": "Rotten Tomatoes Rating",
+						"valid": true
+					}]
+				}
+			}],
+			"mark": "rect",
+			"width": 750,
+			"height": 500,
+			"encoding": {
+				"x": {
+					"bin": {
+						"maxbins": 60
+					},
+					"field": "IMDB Rating",
+					"type": "quantitative",
+					"axis": {
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"bin": {
+						"maxbins": 40
+					},
+					"field": "Rotten Tomatoes Rating",
+					"type": "quantitative",
+					"axis": {
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"color": {
+					"aggregate": "count",
+					"type": "quantitative",
+					"title": "Count",
+					"legend": {
+						"titleFontSize": 18,
+						"labelFontSize": 16
+					}
+				}
+			},
+			"config": {
+				"view": {
+					"stroke": "transparent"
+				}
+			}
+		}
+	},
+	"Colored Scatterplot": {
+		"url": "/vega-lite/examples/point_color_with_shape.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"description": "A scatterplot showing body mass and flipper lengths of penguins.",
+			"title": {
+				"text": "Penguin Characteristics",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 500,
+			"data": {
+				"url": "data/penguins.json"
+			},
+			"mark": "point",
+			"encoding": {
+				"x": {
+					"field": "Flipper Length (mm)",
+					"type": "quantitative",
+					"scale": {
+						"zero": false
+					},
+					"axis": {
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"field": "Body Mass (g)",
+					"type": "quantitative",
+					"scale": {
+						"zero": false
+					},
+					"axis": {
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"color": {
+					"field": "Species",
+					"type": "nominal",
+					"title": "Penguin Specie",
+					"legend": {
+						"titleFontSize": 18,
+						"labelFontSize": 16
+					}
+				},
+				"shape": {
+					"field": "Species",
+					"type": "nominal"
+				}
+			}
+		}
+	},
+	"Bubble Plot (Natural Disasters)": {
+		"url": "/vega-lite/examples/circle_natural_disasters.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "Annual Global Deaths per Natural Disaster",
+				"fontSize": 22
+			},
+			"data": {
+				"url": "data/disasters.csv"
+			},
+			"width": 750,
+			"height": 500,
+			"transform": [{
+				"filter": "datum.Entity !== 'All natural disasters'"
+			}],
+			"mark": {
+				"type": "circle",
+				"opacity": 0.8,
+				"stroke": "black",
+				"strokeWidth": 1
+			},
+			"encoding": {
+				"x": {
+					"field": "Year",
+					"type": "temporal",
+					"axis": {
+						"grid": false
+					},
+					"axis": {
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"field": "Entity",
+					"type": "nominal",
+					"axis": {
+						"title": "",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"size": {
+					"field": "Deaths",
+					"type": "quantitative",
+					"title": "Annual Global Deaths",
+					"legend": {
+						"titleFontSize": 16,
+						"labelFontSize": 14,
+						"clipHeight": 80
+					},
+					"scale": {
+						"rangeMax": 2500
+					}
+				},
+				"color": {
+					"field": "Entity",
+					"type": "nominal",
+					"legend": null
+				}
+			}
+		}
+	},
+	"Multi Series Line Chart": {
+		"url": "/vega-lite/examples/line_color.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"description": "Stock prices of 5 Tech Companies over Time.",
+			"title": {
+				"text": "Stock Prices Over Time",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 500,
+			"data": {
+				"url": "data/stocks.csv"
+			},
+			"mark": "line",
+			"encoding": {
+				"x": {
+					"field": "date",
+					"type": "temporal",
+					"axis": {
+						"title": "Date",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"field": "price",
+					"type": "quantitative",
+					"axis": {
+						"title": "Price",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"color": {
+					"field": "symbol",
+					"type": "nominal",
+					"legend": {
+						"titleFontSize": 18,
+						"labelFontSize": 16
+					}
+				}
+			}
+		}
+	},
+	"Slope Graph": {
+		"url": "/vega-lite/examples/line_slope.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "Change in Median Yield per Site (1931 to 1932)",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 300,
+			"data": {
+			"url": "data/barley.json"
+			},
+			"description": "Slope graph showing the change in yield for different barley sites. It shows the error in the year labels for the Morris site.",
+			"width": {
+			"step": 50
+			},
+			"encoding": {
+				"x": {
+				  "field": "year",
+				  "type": "ordinal",
+				  "title": "",
+					"axis": {
+						"title": "Year",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					},
+				  "scale": {
+				    "padding": 1
+				  }
+				},
+				"y": {
+				  "aggregate": "median",
+				  "field": "yield",
+				  "type": "quantitative",
+				  "title": "",
+					"axis": {
+						"title": "Median yield",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"color": {
+				  "field": "site",
+				  "type": "nominal",
+				  "title": "Site",
+					"legend": {
+						"titleFontSize": 18,
+						"labelFontSize": 16
+					}
+				}
+			},
+			"layer": [
+			{
+			  "mark": "line"
+			},
+			{
+			  "mark": {
+			    "type": "point",
+			    "filled": true
+			  }
+			}
+			]
+		}
+	},
+	"A comet chart showing changes between between two states": {
+		"url": "/vega-lite/examples/trail_comet.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"data": {
+				"url": "data/barley.json"
+			},
+			"title": {
+				"text": "Barley Yield comparison between 1932 and 1931",
+				"fontSize": 22
+			},
+			"width": 80,
+			"height": 350,
+			"transform": [{
+				"pivot": "year",
+				"value": "yield",
+				"groupby": ["variety", "site"]
+			}, {
+				"fold": ["1931", "1932"],
+				"as": ["year", "yield"]
+			}, {
+				"calculate": "toNumber(datum.year)",
+				"as": "year"
+			}, {
+				"calculate": "datum['1932'] - datum['1931']",
+				"as": "delta"
+			}],
+			"mark": "trail",
+			"encoding": {
+				"x": {
+					"field": "year",
+					"axis": {
+						"title": null,
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"field": "variety",
+					"axis": {
+						"title": "Variety",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"size": {
+					"field": "yield",
+					"type": "quantitative",
+					"scale": {
+						"range": [0, 12]
+					},
+					"legend": {
+						"values": [20, 60],
+						"title": "Barley Yield (bushels/acre)",
+						"titleFontSize": 13,
+						"labelFontSize": 12
+					}
+				},
+				"tooltip": [{
+					"field": "year",
+					"type": "quantitative"
+				}, {
+					"field": "yield"
+				}],
+				"color": {
+					"field": "delta",
+					"type": "quantitative",
+					"scale": {
+						"domainMid": 0
+					},
+					"legend": {
+						"title": "Yield Delta (%)",
+						"titleFontSize": 13,
+						"labelFontSize": 12
+					}
+				},
+				"column": {
+					"field": "site",
+					"title": "Site"
+				}
+			},
+			"view": {
+				"stroke": null
+			},
+			"config": {
+				"legend": {
+					"orient": "bottom",
+					"direction": "horizontal"
+				}
+			}
+		}
+	},
+	"Area Chart": {
+		"url": "/vega-lite/examples/area.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"width": 750,
+			"height": 500,
+  			"title": {
+				"text": "Unemployment Trend",
+				"fontSize": 22
+			},
+			"data": {
+				"url": "data/unemployment-across-industries.json"
+			},
+			"mark": "area",
+			"encoding": {
+				"x": {
+					"timeUnit": "yearmonth",
+					"field": "date",
+					"axis": {
+						"format": "%Y",
+        				"title": "Year",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"aggregate": "sum",
+					"field": "count",
+					"axis": {
+						"title": "Total Unemployment",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				}
+			}
+		}
+	},
+	"Stacked Area Chart": {
+		"url": "/vega-lite/examples/stacked_area.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"width": 750,
+			"height": 500,
+  			"title": {
+				"text": "Contribution Across Industries for Total Unemployment Trend",
+				"fontSize": 22
+			},
+			"data": {
+				"url": "data/unemployment-across-industries.json"
+			},
+			"mark": "area",
+			"encoding": {
+				"x": {
+					"timeUnit": "yearmonth",
+					"field": "date",
+					"axis": {
+						"format": "%Y",
+        				"title": "Year",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"aggregate": "sum",
+					"field": "count",
+					"axis": {
+						"title": "Total Unemployment",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"color": {
+					"field": "series",
+					"scale": {
+						"scheme": "category20b"
+					},
+					"title": "Industries",
+					"legend": {
+						"titleFontSize": 18,
+						"labelFontSize": 13
+					}
+				}
+			}
+		}
+	},
+	"Horizon Graph": {
+		"url": "/vega-lite/examples/area_horizon.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"description": "This horizon graph visualizes data over time, with two layers representing different value ranges for clarity. The first layer (lighter) shows values directly, while the second layer (darker) represents values above a certain threshold to efficiently use space.",
+			"title": {
+				"text": "Horizon View of Time-Based Prices",
+				"fontSize": 22
+			},
+			"width": 375,
+			"height": 70,
+			"data": {
+			"values": [
+			  {"Time": 1, "Value": 28}, {"Time": 2, "Value": 55}, {"Time": 3, "Value": 43},
+			  {"Time": 4, "Value": 91}, {"Time": 5, "Value": 81}, {"Time": 6, "Value": 53},
+			  {"Time": 7, "Value": 19}, {"Time": 8, "Value": 87}, {"Time": 9, "Value": 52},
+			  {"Time": 10, "Value": 48}, {"Time": 11, "Value": 24}, {"Time": 12, "Value": 49},
+			  {"Time": 13, "Value": 87}, {"Time": 14, "Value": 66}, {"Time": 15, "Value": 17},
+			  {"Time": 16, "Value": 27}, {"Time": 17, "Value": 68}, {"Time": 18, "Value": 16},
+			  {"Time": 19, "Value": 49}, {"Time": 20, "Value": 15}
+			]
+			},
+			"encoding": {
+			"x": {
+			  "field": "Time",
+			  "type": "quantitative",
+				"axis": {
+					"title": "Time",
+					"labelFontSize": 14,
+					"titleFontSize": 20
+				},
+			  "scale": {
+			    "zero": false,
+			    "nice": false
+			  }
+			},
+			"y": {
+			  "field": "Value",
+			  "type": "quantitative",
+			  "scale": {
+			    "domain": [0, 50]
+			  },
+				"axis": {
+					"title": "Price",
+					"labelFontSize": 14,
+					"titleFontSize": 20
+				}
+			}
+			},
+			"layer": [
+			{
+			  "mark": {
+			    "type": "area",
+			    "clip": true,
+			    "orient": "vertical",
+			    "opacity": 0.6
+			  }
+			},
+			{
+			  "transform": [
+			    {
+			      "calculate": "datum.Value - 50",
+			      "as": "TransformedValue"
+			    }
+			  ],
+			  "mark": {
+			    "type": "area",
+			    "clip": true,
+			    "orient": "vertical"
+			  },
+			  "encoding": {
+			    "y": {
+			      "field": "TransformedValue",
+			      "type": "quantitative",
+			      "scale": {
+			        "domain": [0, 50]
+			      }
+			    },
+			    "opacity": {
+			      "value": 0.3
+			    }
+			  }
+			}
+			],
+			"config": {
+			"area": {
+			  "interpolate": "monotone"
+				}
+			}
+		}
+	},
+	"Annual Weather Heatmap": {
+		"url": "/vega-lite/examples/rect_heatmap_weather.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"data": {
+				"url": "data/seattle-weather.csv"
+			},
+			"title": {
+				"text": "Daily Max Temperatures (C) in Seattle, WA",
+				"fontSize": 22
+			},
+			"width": 375,
+			"height": 150,
+			"config": {
+				"view": {
+					"strokeWidth": 0,
+					"step": 13
+				},
+				"axis": {
+					"domain": false
+				}
+			},
+			"mark": "rect",
+			"encoding": {
+				"x": {
+					"field": "date",
+					"timeUnit": "date",
+					"type": "ordinal",
+					"axis": {
+						"labelAngle": 0,
+						"format": "%e",
+						"title": "Day",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"field": "date",
+					"timeUnit": "month",
+					"type": "ordinal",
+					"axis": {
+						"title": "Month",
+						"labelFontSize": 12,
+						"titleFontSize": 20
+					}
+				},
+				"color": {
+					"field": "temp_max",
+					"aggregate": "max",
+					"type": "quantitative",
+					"legend": {
+						"title": "(C)",
+						"titleFontSize": 14,
+						"labelFontSize": 13
+					}
+				}
+			}
+		}
+	},
+	"Lasagna Plot (Dense Time-Series Heatmap)": {
+		"url": "/vega-lite/examples/rect_lasagna.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"transform": [{
+				"filter": "datum.symbol !== 'GOOG'"
+			}],
+			"width": 750,
+			"height": 300,
+			"title": {
+				"text":"Stock Average Price per Month",
+				"fontSize": 22
+			},
+			"data": {
+				"url": "data/stocks.csv"
+			},
+			"mark": "rect",
+			"encoding": {
+				"x": {
+					"timeUnit": "yearmonthdate",
+					"field": "date",
+					"type": "ordinal",
+					"axis": {
+						"title": "Date",
+						"labelFontSize": 14,
+						"titleFontSize": 20,
+						"format": "%Y",
+						"labelAngle": 0,
+						"labelOverlap": false,
+						"labelColor": {
+							"condition": {
+								"test": {
+									"timeUnit": "monthdate",
+									"field": "value",
+									"equal": {
+										"month": 1,
+										"date": 1
+									}
+								},
+								"value": "black"
+							},
+							"value": null
+						},
+						"tickColor": {
+							"condition": {
+								"test": {
+									"timeUnit": "monthdate",
+									"field": "value",
+									"equal": {
+										"month": 1,
+										"date": 1
+									}
+								},
+								"value": "black"
+							},
+							"value": null
+						}
+					}
+				},
+				"color": {
+					"aggregate": "sum",
+					"field": "price",
+					"type": "quantitative",
+					"title": "Price",
+					"legend": {
+						"labelFontSize": 13,
+						"titleFontSize": 16
+					}
+				},
+				"y": {
+					"field": "symbol",
+					"type": "nominal",
+					"axis": {
+						"title": "Company",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				}
+			}
+		}
+	},
+	"Mosaic Chart with Labels": {
+		"url": "/vega-lite/examples/rect_mosaic_labelled_with_offset.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"data": {
+				"url": "data/cars.json"
+			},
+			"title": {
+				"text": "Distribution of Car Origins by Cylinder Count",
+				"fontSize": 22
+			},
+			"transform": [{
+				"aggregate": [{
+					"op": "count",
+					"as": "count_*"
+				}],
+				"groupby": ["Origin", "Cylinders"]
+			}, {
+				"stack": "count_*",
+				"groupby": [],
+				"as": ["stack_count_Origin1", "stack_count_Origin2"],
+				"offset": "normalize",
+				"sort": [{
+					"field": "Origin",
+					"order": "ascending"
+				}]
+			}, {
+				"window": [{
+					"op": "min",
+					"field": "stack_count_Origin1",
+					"as": "x"
+				}, {
+					"op": "max",
+					"field": "stack_count_Origin2",
+					"as": "x2"
+				}, {
+					"op": "dense_rank",
+					"as": "rank_Cylinders"
+				}, {
+					"op": "distinct",
+					"field": "Cylinders",
+					"as": "distinct_Cylinders"
+				}],
+				"groupby": ["Origin"],
+				"frame": [null, null],
+				"sort": [{
+					"field": "Cylinders",
+					"order": "ascending"
+				}]
+			}, {
+				"window": [{
+					"op": "dense_rank",
+					"as": "rank_Origin"
+				}],
+				"frame": [null, null],
+				"sort": [{
+					"field": "Origin",
+					"order": "ascending"
+				}]
+			}, {
+				"stack": "count_*",
+				"groupby": ["Origin"],
+				"as": ["y", "y2"],
+				"offset": "normalize",
+				"sort": [{
+					"field": "Cylinders",
+					"order": "ascending"
+				}]
+			}, {
+				"calculate": "datum.y + (datum.rank_Cylinders - 1) * datum.distinct_Cylinders * 0.01 / 3",
+				"as": "ny"
+			}, {
+				"calculate": "datum.y2 + (datum.rank_Cylinders - 1) * datum.distinct_Cylinders * 0.01 / 3",
+				"as": "ny2"
+			}, {
+				"calculate": "datum.x + (datum.rank_Origin - 1) * 0.01",
+				"as": "nx"
+			}, {
+				"calculate": "datum.x2 + (datum.rank_Origin - 1) * 0.01",
+				"as": "nx2"
+			}, {
+				"calculate": "(datum.nx+datum.nx2)/2",
+				"as": "xc"
+			}, {
+				"calculate": "(datum.ny+datum.ny2)/2",
+				"as": "yc"
+			}],
+			"vconcat": [{
+				"mark": {
+					"type": "text",
+					"baseline": "middle",
+					"align": "center",
+					"fontSize": 18
+				},
+				"width": 465,
+				"height": 50,
+				"encoding": {
+					"x": {
+						"aggregate": "min",
+						"field": "xc",
+						"title": ""
+					},
+					"color": {
+						"field": "Origin",
+						"legend": null
+					},
+					"text": {
+						"field": "Origin"
+					}
+				}
+			}, {
+				"layer": [{
+					"mark": {
+						"type": "rect"
+					},
+					"width": 465,
+					"height": 350,
+					"encoding": {
+						"x": {
+							"field": "nx",
+							"type": "quantitative",
+							"axis": null
+						},
+						"x2": {
+							"field": "nx2"
+						},
+						"y": {
+							"field": "ny",
+							"type": "quantitative"
+						},
+						"y2": {
+							"field": "ny2"
+						},
+						"color": {
+							"field": "Origin",
+							"type": "nominal",
+							"legend": null
+						},
+						"opacity": {
+							"field": "Cylinders",
+							"type": "quantitative",
+							"legend": null
+						},
+						"tooltip": [{
+							"field": "Origin",
+							"type": "nominal"
+						}, {
+							"field": "Cylinders",
+							"type": "quantitative"
+						}]
+					}
+				}, {
+					"mark": {
+						"type": "text",
+						"baseline": "middle",
+						"fontSize": 17
+					},
+					"encoding": {
+						"x": {
+							"field": "xc",
+							"type": "quantitative",
+							"axis": null
+						},
+						"y": {
+							"field": "yc",
+							"type": "quantitative",
+							"axis": {
+								"title": "Cylinders",
+								"titleFontSize": 18,
+								"labelFontSize": 16
+							}
+						},
+						"text": {
+							"field": "Cylinders",
+							"type": "nominal"
+						}
+					}
+				}]
+			}],
+			"resolve": {
+				"scale": {
+					"x": "shared"
+				}
+			},
+			"config": {
+				"view": {
+					"stroke": ""
+				},
+				"concat": {
+					"spacing": 10
+				},
+				"axis": {
+					"domain": false,
+					"ticks": false,
+					"labels": false,
+					"grid": false
+				}
+			}
+		}
+	},
+	"Radial Plot": {
+		"url": "/vega-lite/examples/arc_radial.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"description": "A simple radial chart with embedded data.",
+			"data": {
+		        "values": [
+		          {"id": 1, "value": 12, "category": "Esemka"},
+		          {"id": 2, "value": 23, "category": "Cadillac"},
+		          {"id": 3, "value": 47, "category": "BMW"},
+		          {"id": 4, "value": 6, "category": "Ferrari"},
+		          {"id": 5, "value": 52, "category": "Audi"},
+		          {"id": 6, "value": 19, "category": "Daewoo"}
+		        ]
+		      },
+		    "title": {
+				"text": "Number of Cars Sold per Make",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 500,
+			"layer": [{
+				"mark": {
+					"type": "arc",
+					"innerRadius": 20,
+					"stroke": "#fff"
+				}
+			}, {
+				"mark": {
+					"type": "text",
+					"radiusOffset": 20,
+					"fontSize": 20
+				},
+				"encoding": {
+					"text": {
+						"field": "value",
+						"type": "quantitative"
+					}
+				}
+			}],
+			"encoding": {
+				"theta": {
+					"field": "value",
+					"type": "quantitative",
+					"stack": true
+				},
+				"radius": {
+					"field": "value",
+					"scale": {
+						"type": "sqrt",
+						"zero": true,
+						"rangeMin": 20
+					}
+				},
+				"color": {
+					"field": "category",
+					"type": "nominal",
+          "legend": {
+            "title": "Make",
+			"titleFontSize": 18,
+			"labelFontSize": 16
+          }
+            }
+			}
+		}
+	},
+	"Waterfall Chart of Monthly Profit and Loss": {
+		"url": "/vega-lite/examples/waterfall_chart.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "Monthly Profit and Loss",
+				"fontSize": 22
+			},
+			"data": {
+				"values": [{
+					"label": "Begin",
+					"amount": 4000
+				}, {
+					"label": "Jan",
+					"amount": 1707
+				}, {
+					"label": "Feb",
+					"amount": -1425
+				}, {
+					"label": "Mar",
+					"amount": -1030
+				}, {
+					"label": "Apr",
+					"amount": 1812
+				}, {
+					"label": "May",
+					"amount": -1067
+				}, {
+					"label": "Jun",
+					"amount": -1481
+				}, {
+					"label": "Jul",
+					"amount": 1228
+				}, {
+					"label": "Aug",
+					"amount": 1176
+				}, {
+					"label": "Sep",
+					"amount": 1146
+				}, {
+					"label": "Oct",
+					"amount": 1205
+				}, {
+					"label": "Nov",
+					"amount": -1388
+				}, {
+					"label": "Dec",
+					"amount": 1492
+				}, {
+					"label": "End",
+					"amount": 0
+				}]
+			},
+			"width": 650,
+			"height": 250,
+			"transform": [{
+				"window": [{
+					"op": "sum",
+					"field": "amount",
+					"as": "sum"
+				}]
+			}, {
+				"window": [{
+					"op": "lead",
+					"field": "label",
+					"as": "lead"
+				}]
+			}, {
+				"calculate": "datum.lead === null ? datum.label : datum.lead",
+				"as": "lead"
+			}, {
+				"calculate": "datum.label === 'End' ? 0 : datum.sum - datum.amount",
+				"as": "previous_sum"
+			}, {
+				"calculate": "datum.label === 'End' ? datum.sum : datum.amount",
+				"as": "amount"
+			}, {
+				"calculate": "(datum.label !== 'Begin' && datum.label !== 'End' && datum.amount > 0 ? '+' : '') + datum.amount",
+				"as": "text_amount"
+			}, {
+				"calculate": "(datum.sum + datum.previous_sum) / 2",
+				"as": "center"
+			}, {
+				"calculate": "datum.sum < datum.previous_sum ? datum.sum : ''",
+				"as": "sum_dec"
+			}, {
+				"calculate": "datum.sum > datum.previous_sum ? datum.sum : ''",
+				"as": "sum_inc"
+			}],
+			"encoding": {
+				"x": {
+					"field": "label",
+					"type": "ordinal",
+					"sort": null,
+					"axis": {
+						"labelAngle": 0,
+						"title": "Months",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				}
+			},
+			"layer": [{
+				"mark": {
+					"type": "bar",
+					"size": 45
+				},
+				"encoding": {
+					"y": {
+						"field": "previous_sum",
+						"type": "quantitative",
+						"axis": {
+							"title": "Amount",
+							"labelFontSize": 14,
+							"titleFontSize": 20
+						}
+					},
+					"y2": {
+						"field": "sum"
+					},
+					"color": {
+						"condition": [{
+							"test": "datum.label === 'Begin' || datum.label === 'End'",
+							"value": "#f7e0b6"
+						}, {
+							"test": "datum.sum < datum.previous_sum",
+							"value": "#f78a64"
+						}],
+						"value": "#93c4aa"
+					}
+				}
+			}, {
+				"mark": {
+					"type": "rule",
+					"color": "#404040",
+					"opacity": 1,
+					"strokeWidth": 2,
+					"xOffset": -22.5,
+					"x2Offset": 22.5
+				},
+				"encoding": {
+					"x2": {
+						"field": "lead"
+					},
+					"y": {
+						"field": "sum",
+						"type": "quantitative"
+					}
+				}
+			}, {
+				"mark": {
+					"type": "text",
+					"dy": -4,
+					"baseline": "bottom"
+				},
+				"encoding": {
+					"y": {
+						"field": "sum_inc",
+						"type": "quantitative"
+					},
+					"text": {
+						"field": "sum_inc",
+						"type": "nominal"
+					}
+				}
+			}, {
+				"mark": {
+					"type": "text",
+					"dy": 4,
+					"baseline": "top"
+				},
+				"encoding": {
+					"y": {
+						"field": "sum_dec",
+						"type": "quantitative"
+					},
+					"text": {
+						"field": "sum_dec",
+						"type": "nominal"
+					}
+				}
+			}, {
+				"mark": {
+					"type": "text",
+					"fontWeight": "bold",
+					"baseline": "middle"
+				},
+				"encoding": {
+					"y": {
+						"field": "center",
+						"type": "quantitative"
+					},
+					"text": {
+						"field": "text_amount",
+						"type": "nominal"
+					},
+					"color": {
+						"condition": [{
+							"test": "datum.label === 'Begin' || datum.label === 'End'",
+							"value": "#725a30"
+						}],
+						"value": "white"
+					}
+				}
+			}],
+			"config": {
+				"text": {
+					"fontWeight": "bold",
+					"color": "#404040"
+				}
+			}
+		}
+	},
+	"Parallel Coordinate Plot": {
+		"url": "/vega-lite/examples/parallel_coordinate.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"description": "Though Vega-Lite supports only one scale per axes, one can create a parallel coordinate plot by folding variables, using `joinaggregate` to normalize their values and using ticks and rules to manually create axes.",
+			"data": {
+				"url": "data/penguins.json"
+			},
+			"title": {
+				"text": "Measurements per Penguin",
+				"fontSize": 22
+			},
+			"width": 600,
+			"height": 300,
+			"transform": [{
+				"filter": "datum['Beak Length (mm)']"
+			}, {
+				"window": [{
+					"op": "count",
+					"as": "index"
+				}]
+			}, {
+				"fold": ["Beak Length (mm)", "Beak Depth (mm)", "Flipper Length (mm)", "Body Mass (g)"]
+			}, {
+				"joinaggregate": [{
+					"op": "min",
+					"field": "value",
+					"as": "min"
+				}, {
+					"op": "max",
+					"field": "value",
+					"as": "max"
+				}],
+				"groupby": ["key"]
+			}, {
+				"calculate": "(datum.value - datum.min) / (datum.max-datum.min)",
+				"as": "norm_val"
+			}, {
+				"calculate": "(datum.min + datum.max) / 2",
+				"as": "mid"
+			}],
+			"layer": [{
+				"mark": {
+					"type": "rule",
+					"color": "#ccc"
+				},
+				"encoding": {
+					"detail": {
+						"aggregate": "count"
+					},
+					"x": {
+						"field": "key"
+					}
+				}
+			}, {
+				"mark": "line",
+				"encoding": {
+					"color": {
+						"type": "nominal",
+						"field": "Species",
+						"legend": {
+							"title": "Penguin Specie",
+							"titleFontSize": 18,
+							"labelFontSize": 16
+						}
+					},
+					"detail": {
+						"type": "nominal",
+						"field": "index"
+					},
+					"opacity": {
+						"value": 0.3
+					},
+					"x": {
+						"type": "nominal",
+						"field": "key"
+					},
+					"y": {
+						"type": "quantitative",
+						"field": "norm_val",
+						"axis": null
+					},
+					"tooltip": [{
+						"type": "quantitative",
+						"field": "Beak Length (mm)"
+					}, {
+						"type": "quantitative",
+						"field": "Beak Depth (mm)"
+					}, {
+						"type": "quantitative",
+						"field": "Flipper Length (mm)"
+					}, {
+						"type": "quantitative",
+						"field": "Body Mass (g)"
+					}]
+				}
+			}, {
+				"encoding": {
+					"x": {
+						"type": "nominal",
+						"field": "key"
+					},
+					"y": {
+						"value": 0
+					}
+				},
+				"layer": [{
+					"mark": {
+						"type": "text",
+						"style": "label",
+						"fontSize": 15
+					},
+					"encoding": {
+						"text": {
+							"aggregate": "max",
+							"field": "max"
+						}
+					}
+				}, {
+					"mark": {
+						"type": "tick",
+						"style": "tick",
+						"size": 8,
+						"color": "#ccc"
+					}
+				}]
+			}, {
+				"encoding": {
+					"x": {
+						"type": "nominal",
+						"field": "key"
+					},
+					"y": {
+						"value": 150
+					}
+				},
+				"layer": [{
+					"mark": {
+						"type": "text",
+						"style": "label",
+						"fontSize": 15
+					},
+					"encoding": {
+						"text": {
+							"aggregate": "min",
+							"field": "mid"
+						}
+					}
+				}, {
+					"mark": {
+						"type": "tick",
+						"style": "tick",
+						"size": 8,
+						"color": "#ccc"
+					}
+				}]
+			}, {
+				"encoding": {
+					"x": {
+						"type": "nominal",
+						"field": "key"
+					},
+					"y": {
+						"value": 300
+					}
+				},
+				"layer": [{
+					"mark": {
+						"type": "text",
+						"style": "label",
+						"fontSize": 15
+					},
+					"encoding": {
+						"text": {
+							"aggregate": "min",
+							"field": "min"
+						}
+					}
+				}, {
+					"mark": {
+						"type": "tick",
+						"style": "tick",
+						"size": 8,
+						"color": "#ccc"
+					}
+				}]
+			}],
+			"config": {
+				"axisX": {
+					"domain": false,
+					"labelAngle": 0,
+					"tickColor": "#ccc",
+					"title": null
+				},
+				"view": {
+					"stroke": null
+				},
+				"style": {
+					"label": {
+						"baseline": "middle",
+						"align": "right",
+						"dx": -5
+					},
+					"tick": {
+						"orient": "horizontal"
+					}
+				}
+			}
+		}
+	},
+	"Scatterplot with Mean and Standard Deviation Overlay": {
+		"url": "/vega-lite/examples/layer_scatter_errorband_1D_stdev_global_mean.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+			"title": {
+				"text": "Miles per Gallon per Horsepower",
+				"fontSize": 22
+			},
+			"data": {
+				"url": "data/cars.json"
+			},
+			"width": 750,
+			"height": 500,
+			"layer": [{
+				"mark": "point",
+				"encoding": {
+					"x": {
+						"field": "Horsepower",
+						"type": "quantitative",
+						"axis": {
+							"labelFontSize": 14,
+							"titleFontSize": 20
+						}
+					},
+					"y": {
+						"field": "Miles_per_Gallon",
+						"type": "quantitative",
+						"axis": {
+							"labelFontSize": 14,
+							"titleFontSize": 20
+						}
+					}
+				}
+			}, {
+				"mark": {
+					"type": "errorband",
+					"extent": "stdev",
+					"opacity": 0.2
+				},
+				"encoding": {
+					"y": {
+						"field": "Miles_per_Gallon",
+						"type": "quantitative",
+						"axis": {
+							"title": "Miles per Gallon (median +-1 SD)",
+							"labelFontSize": 14,
+							"titleFontSize": 20
+						}
+					}
+				}
+			}, {
+				"mark": "rule",
+				"encoding": {
+					"y": {
+						"field": "Miles_per_Gallon",
+						"type": "quantitative",
+						"aggregate": "mean"
+					}
+				}
+			}]
+		}
+	},
+	"Box Plot with Pre-Calculated Summaries": {
+		"url": "/vega-lite/examples/boxplot_preaggregated.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "Body Mass of Penguin Species (g)",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 180,
+			"data": {
+				"values": [{
+					"Species": "Adelie",
+					"lower": 2850,
+					"q1": 3350,
+					"median": 3700,
+					"q3": 4000,
+					"upper": 4775,
+					"outliers": []
+				}, {
+					"Species": "Chinstrap",
+					"lower": 2700,
+					"q1": 3487.5,
+					"median": 3700,
+					"q3": 3950,
+					"upper": 4800,
+					"outliers": [2700, 4800]
+				}, {
+					"Species": "Gentoo",
+					"lower": 3950,
+					"q1": 4700,
+					"median": 5000,
+					"q3": 5500,
+					"upper": 6300,
+					"outliers": []
+				}]
+			},
+			"encoding": {
+				"y": {
+					"field": "Species",
+					"type": "nominal",
+					"title": null,
+					"axis": {
+						"title": "Species",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				}
+			},
+			"layer": [{
+				"mark": {
+					"type": "rule"
+				},
+				"encoding": {
+					"x": {
+						"field": "lower",
+						"type": "quantitative",
+						"scale": {
+							"zero": false
+						},
+						"title": null,
+						"axis": {
+							"title": "Grams",
+							"labelFontSize": 11,
+							"titleFontSize": 20
+						}
+					},
+					"x2": {
+						"field": "upper"
+					}
+				}
+			}, {
+				"mark": {
+					"type": "bar",
+					"size": 40
+				},
+				"encoding": {
+					"x": {
+						"field": "q1",
+						"type": "quantitative"
+					},
+					"x2": {
+						"field": "q3"
+					},
+					"color": {
+						"field": "Species",
+						"type": "nominal",
+						"legend": null
+					}
+				}
+			}, {
+				"mark": {
+					"type": "tick",
+					"color": "white",
+					"size": 40
+				},
+				"encoding": {
+					"x": {
+						"field": "median",
+						"type": "quantitative"
+					}
+				}
+			}, {
+				"transform": [{
+					"flatten": ["outliers"]
+				}],
+				"mark": {
+					"type": "point",
+					"style": "boxplot-outliers"
+				},
+				"encoding": {
+					"x": {
+						"field": "outliers",
+						"type": "quantitative"
+					}
+				}
+			}]
+		}
+	},
+	"Ranged Dot Plot": {
+		"url": "/vega-lite/examples/layer_ranged_dot.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"description": "A ranged dot plot that uses 'layer' to convey changing life expectancy for the five most populous countries (between 1955 and 2000).",
+			"data": {
+				"url": "data/countries.json"
+			},
+			"title": {
+				"text": "Comparison of Life Expectancy per Country (1955 vs. 2000)",
+				"fontSize": 22
+			},
+			"width": 500,
+			"height": 150,
+			"transform": [{
+				"filter": {
+					"field": "country",
+					"oneOf": ["China", "India", "United States", "Indonesia", "Brazil"]
+				}
+			}, {
+				"filter": {
+					"field": "year",
+					"oneOf": [1955, 2000]
+				}
+			}],
+			"encoding": {
+				"x": {
+					"field": "life_expect",
+					"type": "quantitative",
+					"axis": {
+						"title": "Life Expectancy (years)",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				},
+				"y": {
+					"field": "country",
+					"type": "nominal",
+					"axis": {
+						"offset": 5,
+						"ticks": false,
+						"minExtent": 70,
+						"domain": false,
+						"title": "Country",
+						"labelFontSize": 14,
+						"titleFontSize": 20
+					}
+				}
+			},
+			"layer": [{
+				"mark": "line",
+				"encoding": {
+					"detail": {
+						"field": "country",
+						"type": "nominal"
+					},
+					"color": {
+						"value": "#db646f"
+					}
+				}
+			}, {
+				"mark": {
+					"type": "point",
+					"filled": true
+				},
+				"encoding": {
+					"color": {
+						"field": "year",
+						"type": "ordinal",
+						"scale": {
+							"domain": [1955, 2000],
+							"range": ["#e6959c", "#911a24"]
+						},
+					"legend": {
+						"title": "Year",
+						"titleFontSize": 18,
+						"labelFontSize": 16
+					}
+					},
+					"size": {
+						"value": 100
+					},
+					"opacity": {
+						"value": 1
+					}
+				}
+			}]
+		}
+	},
+	"Horizontally Repeated Charts": {
+		"url": "/vega-lite/examples/repeat_histogram.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      		"title": {
+				"text": "Distribution of Car Features stacked by Origin",
+				"fontSize": 22
+			},
+			"repeat": ["Horsepower", "Miles_per_Gallon", "Acceleration", "Displacement"],
+			"columns": 2,
+			"spec": {
+				"data": {
+					"url": "data/cars.json"
+				},
+				"mark": "bar",
+				"encoding": {
+					"x": {
+						"field": {
+							"repeat": "repeat"
+						},
+						"bin": true,
+						"axis": {
+							"labelFontSize": 14,
+							"titleFontSize": 20
+						}
+					},
+					"y": {
+						"aggregate": "count",
+						"axis": {
+							"title": "Count",
+							"labelFontSize": 14,
+							"titleFontSize": 20
+						}
+					},
+					"color": {
+						"field": "Origin",
+						"legend": {
+							"titleFontSize": 18,
+							"labelFontSize": 16
+						}
+					}
+				}
+			}
+		}
+	},
+	"Choropleth of Unemployment Rate per County": {
+		"url": "/vega-lite/examples/geo_choropleth.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "Unemployment Rate per County",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 500,
+			"data": {
+				"url": "data/us-10m.json",
+				"format": {
+					"type": "topojson",
+					"feature": "counties"
+				}
+			},
+			"transform": [{
+				"lookup": "id",
+				"from": {
+					"data": {
+						"url": "data/unemployment.tsv"
+					},
+					"key": "id",
+					"fields": ["rate"]
+				}
+			}],
+			"projection": {
+				"type": "albersUsa"
+			},
+			"mark": "geoshape",
+			"encoding": {
+				"color": {
+					"field": "rate",
+					"type": "quantitative",
+					"legend": {
+						"title": "Rate",
+						"titleFontSize": 18,
+						"labelFontSize": 16
+					}
+				}
+			}
+		}
+	},
+	"One Dot per Zipcode in the U.S.": {
+		"url": "/vega-lite/examples/geo_circle.html",
+		"spec": {
+			"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			"title": {
+				"text": "Zipcodes in the US",
+				"fontSize": 22
+			},
+			"width": 750,
+			"height": 500,
+			"data": {
+				"url": "data/zipcodes.csv"
+			},
+			"transform": [{
+				"calculate": "substring(datum.zip_code, 0, 1)",
+				"as": "digit"
+			}],
+			"projection": {
+				"type": "albersUsa"
+			},
+			"mark": "circle",
+			"encoding": {
+				"longitude": {
+					"field": "longitude",
+					"type": "quantitative"
+				},
+				"latitude": {
+					"field": "latitude",
+					"type": "quantitative"
+				},
+				"size": {
+					"value": 2
+				},
+				"color": {
+					"field": "digit",
+					"type": "nominal",
+					"legend": {
+						"title": "First Digit",
+						"titleFontSize": 18,
+						"labelFontSize": 16
+					}
+				}
+			}
+		}
+	}
+}
